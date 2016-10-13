@@ -4,7 +4,7 @@
         Title="MainWindow" Height="auto" Width="auto">
     <StackPanel Background="#FF2F244F">
         <Label x:Name="title" Content="RSS Sync" Background="{x:Null}" FontFamily="Rockwell Extra Bold" FontSize="26.667" HorizontalAlignment="Center" Foreground="#FFEAEAEA"/>
-    <StackPanel Orientation="Horizontal" Margin="-3,0,0,0">
+        <StackPanel Orientation="Horizontal" Margin="-3,0,0,0" Width="200" HorizontalAlignment="Left" Height="400">
             <StackPanel>
                 <Label x:Name="rssUrlLabel" Content="Label"/>
                 <TextBox x:Name="rssUrlTb" Height="20" Width="87" />
@@ -13,6 +13,18 @@
                 <Label x:Name="intervalTable" Content="Label"/>
                 <TextBox x:Name="intervalTb" Height="20" Width="87" />
             </StackPanel>
+
+        </StackPanel>
+        <StackPanel Height="200" Width="298" Margin="250,-550,50,0">
+            <Label x:Name="label" Content="This is a RSS Feed program, &#xA;designed to help you keep track of your favourite podcasts and download them,&#xA; up to date everytime you start your program!" Background="#FF4B5689" BorderThickness="1" BorderBrush="#FF893C3C" Height="67" HorizontalAlignment="Left" Margin="0,20,20,0"/>
+
+        </StackPanel>
+        <StackPanel x:Name="buttonContainer" Height="101" Width="359" Margin="302,-200,99,250" VerticalAlignment="Top" Orientation="Horizontal" Background="#FF7AB9E4" HorizontalAlignment="Center">
+            <Button x:Name= "addPodcastButton" Height="30" Content="Add Podcast" Margin="10,-40,294,70" Background="White" BorderBrush="#FF7286BB" BorderThickness="2,2,2,1" ToolTip="Search for a new podcast and add it" VerticalAlignment="Bottom" />
+            <Label x:Name="label1" Content="Label"/>
+            <Button x:Name="button" Content="Unsubscribe" Width="90" Margin="-450,0,50,70"/>
+
         </StackPanel>
     </StackPanel>
+
 </Window>
