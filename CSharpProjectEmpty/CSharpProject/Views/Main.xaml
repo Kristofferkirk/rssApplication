@@ -3,6 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="auto" Width="auto">
     <StackPanel Background="#FF2F244F">
-        <Label x:Name="title" Content="RSS Feed finder" Background="{x:Null}" FontFamily="Rockwell Extra Bold" FontSize="26.667" HorizontalAlignment="Center" Foreground="#FFEAEAEA"/>
+        <Label x:Name="title" Content="RSS Sync" Background="{x:Null}" FontFamily="Rockwell Extra Bold" FontSize="26.667" HorizontalAlignment="Center" Foreground="#FFEAEAEA"/>
+    <StackPanel Orientation="Horizontal" Margin="-3,0,0,0">
+            <StackPanel>
+                <Label x:Name="rssUrlLabel" Content="Label"/>
+                <TextBox x:Name="rssUrlTb" Height="20" Width="87" />
+            </StackPanel>
+            <StackPanel>
+                <Label x:Name="intervalTable" Content="Label"/>
+                <TextBox x:Name="intervalTb" Height="20" Width="87" />
+            </StackPanel>
+        </StackPanel>
     </StackPanel>
 </Window>
