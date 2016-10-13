@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Logic.Entities;
-//Klass för avläsning av css flöde
+//Klass för avläsning av rss flöde
 namespace Logic.Readers
 {
     internal class RssReader : IReader
