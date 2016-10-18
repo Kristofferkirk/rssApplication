@@ -26,5 +26,10 @@ namespace CSharpProject.Views
         {
 
         }
+
+        private void backButton1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
