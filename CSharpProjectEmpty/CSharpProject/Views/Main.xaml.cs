@@ -8,6 +8,13 @@ namespace CSharpProject.Views
         public MainWindow()
         {
             InitializeComponent();
+           
+        }
+
+        private void addPodcastButton_Click(object sender, RoutedEventArgs e)
+        {
+            var addPodcast = new Form1();
+            addPodcast.Show();
         }
     }
 }
