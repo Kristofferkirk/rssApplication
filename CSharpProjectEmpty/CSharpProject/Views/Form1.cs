@@ -15,8 +15,9 @@ namespace CSharpProject.Views
         public Form1()
         {
             InitializeComponent();
+            
         }
-
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -30,6 +31,32 @@ namespace CSharpProject.Views
         private void backButton1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var xml = "";
+            using (var client = new System.Net.WebClient())
+            {
+                client.Encoding = Encoding.UTF8;
+                xml = client.DownloadString(textBox1.ToString());
+                
+            }
+            //Skapa en objektrepresentation.
+            var dom = new System.Xml.XmlDocument();
+            dom.LoadXml(xml);
+
+            //Iterera igenom elementet item.
+            foreach (System.Xml.XmlNode item
+               in dom.DocumentElement.SelectNodes("channel/item"))
+            {
+                //Skriv ut dess titel.
+                var title = item.SelectSingleNode("title");
+                Console.WriteLine(title.InnerText);
+            }
+
+
+
         }
     }
 }
