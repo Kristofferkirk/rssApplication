@@ -12,9 +12,12 @@ namespace CSharpProject.Views
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+            var xmlGet = new xmlRetriever();
+            
             
         }
         
@@ -35,26 +38,16 @@ namespace CSharpProject.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var xml = "";
-            using (var client = new System.Net.WebClient())
+            try
             {
-                client.Encoding = Encoding.UTF8;
-                xml = client.DownloadString(textBox1.ToString());
-                
-            }
-            //Skapa en objektrepresentation.
-            var dom = new System.Xml.XmlDocument();
-            dom.LoadXml(xml);
+                string urlInput = textBox1.Text;
+                xmlRetriever.getXML(urlInput);
 
-            //Iterera igenom elementet item.
-            foreach (System.Xml.XmlNode item
-               in dom.DocumentElement.SelectNodes("channel/item"))
+            }
+            catch(Exception error1)
             {
-                //Skriv ut dess titel.
-                var title = item.SelectSingleNode("title");
-                Console.WriteLine(title.InnerText);
+                Console.WriteLine(error1);
             }
-
 
 
         }
