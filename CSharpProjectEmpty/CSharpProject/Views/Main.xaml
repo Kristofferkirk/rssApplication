@@ -31,7 +31,7 @@
         <StackPanel Orientation="Horizontal" Margin="243,-800,207,0" Width="440" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Background="#FFFBFBFB">
             <StackPanel>
                 <Label x:Name="rssUrlLabel" Content="Name" BorderBrush="#FF5E5E66" BorderThickness="2"/>
-                <TextBox x:Name="rssUrlTb" Height="20" Width="87" />
+                <TextBox x:Name="rssName1" Height="20" Width="87" />
                 <TextBox x:Name="rssUrlTb_Copy" Height="20" Width="87" />
                 <TextBox x:Name="rssUrlTb_Copy1" Height="20" Width="87" />
                 <TextBox x:Name="rssUrlTb_Copy2" Height="20" Width="87" />

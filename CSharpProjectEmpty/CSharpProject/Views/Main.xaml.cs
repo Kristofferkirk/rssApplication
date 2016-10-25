@@ -6,6 +6,12 @@ namespace CSharpProject.Views
     public partial class MainWindow : Window
     {
         // private User obj = new User(); // Create a user object class
+
+        public void PassValue(string strValue)
+        {
+            rssName1.Text = strValue;
+        }
+
         public MainWindow()
         {
            InitializeComponent();
@@ -22,8 +28,11 @@ namespace CSharpProject.Views
         */
         private void addPodcastButton_Click(object sender, RoutedEventArgs e)
         {
-            var addPodcast = new Form1();
+            var addPodcast = new Window1();
+            var thisWindow = new MainWindow();
+
             addPodcast.Show();
+            
         }
     }
 }
