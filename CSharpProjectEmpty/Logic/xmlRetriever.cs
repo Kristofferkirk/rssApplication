@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Xml;
 
 
 namespace CSharpProject
@@ -7,10 +8,14 @@ namespace CSharpProject
 
     public class xmlRetriever
     {
-
-        public static void getXML(string url)
+        public xmlRetriever()
+        {
+            
+        }
+        public string getXML(string url)
         {
             var xml = "";
+            string nameOfPDC = "";
             using (var client = new System.Net.WebClient())
             {
                 client.Encoding = Encoding.UTF8;
@@ -18,8 +23,12 @@ namespace CSharpProject
 
             }
             //Skapa en objektrepresentation.
-            var dom = new System.Xml.XmlDocument();
+            var dom = new XmlDocument();
             dom.LoadXml(xml);
+
+            XmlTextWriter writer = new XmlTextWriter("data.xml", null);
+            writer.Formatting = Formatting.Indented;
+            dom.Save(writer);
 
             //Iterera igenom elementet item.
             foreach (System.Xml.XmlNode item
@@ -27,10 +36,13 @@ namespace CSharpProject
             {
                 //Skriv ut dess titel.
                 var title = item.SelectSingleNode("title");
-                Console.WriteLine(title.InnerText);
+                nameOfPDC = title.ToString();
             }
+            return nameOfPDC;
+            
 
         }
+      
 
 
 
