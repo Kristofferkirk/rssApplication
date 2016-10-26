@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Xml;
+using System.ServiceModel;
 
 
 namespace CSharpProject
@@ -12,10 +13,11 @@ namespace CSharpProject
         {
             
         }
-        public string getXML(string url)
+        public string getXML(string url, string name)
         {
             var xml = "";
             string nameOfPDC = "";
+            var nameOfFile = name;
             using (var client = new System.Net.WebClient())
             {
                 client.Encoding = Encoding.UTF8;
@@ -26,9 +28,11 @@ namespace CSharpProject
             var dom = new XmlDocument();
             dom.LoadXml(xml);
 
-            XmlTextWriter writer = new XmlTextWriter("data.xml", null);
+            XmlTextWriter writer = new XmlTextWriter(nameOfFile +".xml", null);
             writer.Formatting = Formatting.Indented;
             dom.Save(writer);
+           
+            
 
             //Iterera igenom elementet item.
             foreach (System.Xml.XmlNode item
@@ -36,10 +40,11 @@ namespace CSharpProject
             {
                 //Skriv ut dess titel.
                 var title = item.SelectSingleNode("title");
-                nameOfPDC = title.ToString();
+                nameOfPDC = title.InnerText;
+                
+                
             }
-            return nameOfPDC;
-            
+            return nameOfPDC;           
 
         }
       

@@ -19,6 +19,7 @@ namespace CSharpProject.Views
     /// </summary>
     public partial class Window1 : Window
     {
+        
         getItemXML one = new getItemXML();
         xmlRetriever retRiver = new xmlRetriever();
         MainWindow first = new MainWindow();
@@ -27,6 +28,7 @@ namespace CSharpProject.Views
         {
             InitializeComponent();
         }
+        
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -34,16 +36,20 @@ namespace CSharpProject.Views
             try
             {
                 string urlInput = rssInput.Text;
-                string title = retRiver.getXML(urlInput);
+                nameBox.Text = first.rssname1.Text;
+                string nameOfFeed = nameBox.Text;
+                string title = retRiver.getXML(urlInput, nameOfFeed);
                 Console.WriteLine(title);
-                this.first.PassValue(nameBox.Text);
+                
                 this.Close();
             }
             catch (Exception someExc)
             {
                 throw someExc;
+                
             }
             
         }
+       
     }
 }

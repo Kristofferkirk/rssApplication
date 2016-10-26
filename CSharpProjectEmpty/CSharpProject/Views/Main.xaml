@@ -27,6 +27,7 @@
                 <Button x:Name="unsubButton" Content="Unsubscribe" Width="100" Margin="490,-30,219,0" Background="#FFB3CFFF" VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" FontFamily="Perpetua" BorderBrush="#FF7286BB"/>
                 <Button x:Name="optionsButton" Content="Options" Width="100" Margin="162,-30,163,0" Background="#FFB3CFFF" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Perpetua" BorderBrush="#FF7286BB"/>
             </StackPanel>
+            <Button x:Name="button10" Content="Update" Height="31" Margin="704,-120,0,0" Click="button10_Click"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="243,-800,207,0" Width="440" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Background="#FFFBFBFB">
             <StackPanel>
