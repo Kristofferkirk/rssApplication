@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CSharpProject;
 
 namespace CSharpProject.Views
 {
@@ -36,18 +37,27 @@ namespace CSharpProject.Views
             try
             {
                 string urlInput = rssInput.Text;
-                nameBox.Text = first.rssname1.Text;
+                
                 string nameOfFeed = nameBox.Text;
                 string title = retRiver.getXML(urlInput, nameOfFeed);
                 Console.WriteLine(title);
                 
                 this.Close();
             }
-            catch (Exception someExc)
+            catch (ArgumentException ex)
             {
-                throw someExc;
+                MessageBox.Show(ex.Message.ToString(), "Empty",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                
                 
             }
+            catch(IndexOutOfRangeException ex2)
+            {
+                System.ArgumentException argEx = new System.ArgumentException("Index is out of range", "index", ex2);
+                throw ex2;
+            }
+            
+            
             
         }
        

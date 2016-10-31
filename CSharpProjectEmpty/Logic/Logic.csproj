@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addFeedtoXML.cs" />
+    <Compile Include="fillBoxFromXML.cs" />
     <Compile Include="generateXML.cs" />
     <Compile Include="getItemXML.cs" />
     <Compile Include="UserInfo.cs" />

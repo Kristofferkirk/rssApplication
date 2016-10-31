@@ -11,7 +11,7 @@ namespace CSharpProject.Views
     public partial class MainWindow : Window
     {
         // private User obj = new User(); // Create a user object class
-        
+
         public void PassValue(string strValue)
         {
             rssName1.Text = strValue;
@@ -19,15 +19,16 @@ namespace CSharpProject.Views
 
         public MainWindow()
         {
-           InitializeComponent();
+            InitializeComponent();
             xmlStartUp();
-            
-           
-           
+
+
+
         }
         private void xmlStartUp()
         {
-            generateXML.Main();
+            generateXML.createFeedList();
+            generateXML.createCategoryList();
         }
         private void addPodcastButton_Click(object sender, RoutedEventArgs e)
         {
@@ -35,20 +36,14 @@ namespace CSharpProject.Views
             var thisWindow = new MainWindow();
 
             addPodcast.Show();
-            
+
         }
 
         private void button10_Click(object sender, RoutedEventArgs e)
         {
             rssName1.Text = Path.GetFileNameWithoutExtension(@"C: \Users\Kristoffer\Source\Repos\rssApplication\CSharpProjectEmpty\CSharpProject\bin\Debug\data.xml").ToUpper();
         }
-        
-        public TextBox rssname1
-        {
-            get
-            {
-                return rssname1;
-            }
-        }
+
+
     }
 }
